@@ -13,9 +13,13 @@ public class UserJT
     public string Port;
     public string PathTexture;
     public float LenghtBelt;
-    public float LenghtTexture;
+    //public float LenghtTexture;
+    public float Window_Lenght;
+    public float Window_Scale;
+    public float Window_X_pos;
+    public float Window_Y_pos;
 
-   
+
 
 
 
@@ -27,7 +31,11 @@ public class UserJT
         Port = "";
         PathTexture = "";
         LenghtBelt = 0;
-        LenghtTexture = 0;
+        Window_Lenght = 1f;
+        Window_Scale=1f;
+        Window_X_pos = 0;
+        Window_Y_pos = 0;
+        //LenghtTexture = 0;
         // contents=new List<ContentEntry>();
     }
     [System.Serializable]

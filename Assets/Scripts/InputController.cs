@@ -47,20 +47,20 @@ public class InputController
 
                     // We assume that they're floats
                     var dist = float.Parse(str);
-                    //Debug.Log("++++++++++++++++++ESP= "+dist);
+                   // Debug.Log("++++++++++++++++++ESP= "+dist);
                     pastPoint = currentPoint;
                     currentPoint = dist;
                     if(pastPoint>0&& currentPoint>0)
                     {
                         if(currentPoint>= pastPoint)
                         {
-                            CurrentValue = (currentPoint - pastPoint) / 25;
-                           // Debug.Log("++++++++++++++++++ESP= " + (currentPoint - pastPoint));
+                            CurrentValue = (currentPoint - pastPoint);
+                            //Debug.Log("++++++++++++++++++ESP_1= " + CurrentValue);
                         }
                         else
                         {
-                            CurrentValue = (1389f - pastPoint+ currentPoint) / 25;
-                           // Debug.Log("++++++++++++++++++ESP= " + (1389f - pastPoint + currentPoint));
+                            CurrentValue = (200f - pastPoint+ currentPoint);
+                           // Debug.Log("++++++++++++++++++ESP_2= " + CurrentValue);
                         }
                        
                         controller.Setspeed(CurrentValue);

@@ -3,9 +3,9 @@ using UnityEngine;
 namespace Lean.Touch
 {
 	/// <summary>This component allows you to spawn a prefab at a point relative to a finger and the specified ScreenDepth.
-	/// To trigger the prefab spawn you must call the Spawn method on this component from somewhere.</summary>
-	[HelpURL(LeanTouch.HelpUrlPrefix + "LeanSpawnAt")]
-	public class LeanSpawnAt : MonoBehaviour
+	/// NOTE: To trigger the prefab spawn you must call the Spawn method on this component from somewhere.</summary>
+	[HelpURL(LeanTouch.HelpUrlPrefix + "LeanSpawner")]
+	public class LeanSpawner : MonoBehaviour
 	{
 		[Tooltip("The prefab that gets spawned")]
 		public Transform Prefab;
@@ -19,9 +19,15 @@ namespace Lean.Touch
 			{
 				var instance   = Instantiate(Prefab);
 				var worldPoint = ScreenDepth.Convert(finger.ScreenPosition, gameObject);
+				var selectable = instance.GetComponent<LeanSelectable>();
 
 				instance.position = worldPoint;
 				instance.rotation = transform.rotation;
+
+				if (selectable != null)
+				{
+					selectable.Select(finger);
+				}
 			}
 		}
 	}

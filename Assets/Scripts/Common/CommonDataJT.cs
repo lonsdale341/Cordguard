@@ -11,6 +11,14 @@ public class CommonDataJT  {
     public static string User_ID ;
     public static DBStruct<UserJT> currentUser;
 
-
+    public static TestRepeated ControllerWindow;
     public static Texture2D TextureBelt;
+
+    public static void ChangeSizePosition()
+    {
+        if(ControllerWindow)
+        {
+            ControllerWindow.ChangeSizePosition();
+        }
+    }
 }

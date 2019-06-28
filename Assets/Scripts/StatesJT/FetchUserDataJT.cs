@@ -35,17 +35,17 @@ namespace States
                 {
                     Debug.Log("Resume FetchUserJT__3");
                     var resultData = results.data as WaitingForDBLoadJT<UserJT>.Results;
-                    if (resultData.wasSuccessful)
+                    Debug.Log("resultData.wasSuccessful="+ resultData.wasSuccessful);
+                    if (resultData.wasSuccessful&& resultData.results != null)
                     {
-                        if (resultData.results != null)
-                        {
+                        
                             // Got some results back!  Use this data.
                             CommonDataJT.currentUser = new DBStruct<UserJT>(
                                     CommonDataJT.DBUserTablePath, CommonDataJT.app);
                             CommonDataJT.currentUser.Initialize(resultData.results);
 
                             Debug.Log("Fetched user ");
-                        }
+                        
 
                     }
                     else

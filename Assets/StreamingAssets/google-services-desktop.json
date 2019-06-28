@@ -1,0 +1,37 @@
+{
+  "client": [
+    {
+      "services": {
+        "appinvite_service": {
+          "status": 1
+        }, 
+        "analytics_service": {
+          "status": 0
+        }
+      }, 
+      "oauth_client": [
+        {
+          "client_id": "446035935692-e9of6m7hefinqins3k1196c9ct4t4miq.apps.googleusercontent.com"
+        }
+      ], 
+      "api_key": [
+        {
+          "current_key": "AIzaSyD1CUTAQg4eMqniThAb5iBY2Qgm1Wh_in8"
+        }
+      ], 
+      "client_info": {
+        "mobilesdk_app_id": "1:446035935692:ios:2a9cc2c77541fc8d", 
+        "android_client_info": {
+          "package_name": "com.uv.cordguard"
+        }
+      }
+    }
+  ], 
+  "configuration_version": "1", 
+  "project_info": {
+    "storage_bucket": "cordguard-e00a5.appspot.com", 
+    "project_id": "cordguard-e00a5", 
+    "firebase_url": "https://cordguard-e00a5.firebaseio.com", 
+    "project_number": "446035935692"
+  }
+}

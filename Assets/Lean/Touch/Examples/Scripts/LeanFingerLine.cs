@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Serialization;
 
 namespace Lean.Touch
 {
@@ -23,9 +24,9 @@ namespace Lean.Touch
 		[Tooltip("Should the line originate from a target point?")]
 		public Transform Target;
 
-		public Vector3Vector3Event OnReleasedFromTo;
+		public Vector3Vector3Event OnReleasedFromTo { get { if (onReleasedFromTo == null) onReleasedFromTo = new Vector3Vector3Event(); return onReleasedFromTo; } } [FormerlySerializedAs("OnReleasedFromTo")] [SerializeField] private Vector3Vector3Event onReleasedFromTo;
 
-		public Vector3Event OnReleasedTo;
+		public Vector3Event OnReleasedTo { get { if (onReleasedTo == null) onReleasedTo = new Vector3Event(); return onReleasedTo; } } [FormerlySerializedAs("OnReleasedTo")] [SerializeField] private Vector3Event onReleasedTo;
 
 		protected override void LinkFingerUp(FingerData link)
 		{
@@ -33,14 +34,14 @@ namespace Lean.Touch
 			var start = GetStartPoint(link.Finger);
 			var end   = GetEndPoint(link.Finger, start);
 
-			if (OnReleasedFromTo != null)
+			if (onReleasedFromTo != null)
 			{
-				OnReleasedFromTo.Invoke(start, end);
+				onReleasedFromTo.Invoke(start, end);
 			}
 
-			if (OnReleasedTo != null)
+			if (onReleasedTo != null)
 			{
-				OnReleasedTo.Invoke(end);
+				onReleasedTo.Invoke(end);
 			}
 		}
 

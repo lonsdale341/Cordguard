@@ -34,6 +34,7 @@ public class DBStruct<T> where T : new()
         {
             Debug.Log("UPDATE DATABASE_1");
             data = newData;
+            CommonDataJT.ChangeSizePosition();
             DiscardRemoteChanges();
         }
     }

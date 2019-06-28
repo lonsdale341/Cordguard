@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.Events;
 using System.Collections.Generic;
 
 namespace Lean.Touch
@@ -8,9 +7,6 @@ namespace Lean.Touch
 	[HelpURL(LeanTouch.HelpUrlPrefix + "LeanFingerTrail")]
 	public class LeanFingerTrail : MonoBehaviour
 	{
-		// Event signature
-		[System.Serializable] public class LeanFingerEvent : UnityEvent<LeanFinger> {}
-
 		// This class will store an association between a Finger and a LineRenderer instance
 		[System.Serializable]
 		public class FingerData : LeanFingerData

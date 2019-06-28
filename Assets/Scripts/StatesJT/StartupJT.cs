@@ -1,6 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 namespace States
@@ -44,18 +44,14 @@ namespace States
                 if (resultData.wasSuccessful)
                 {
                     Debug.Log("Loaded Texture Successfull");
-                    Rect rec = new Rect(0, 0, CommonDataJT.TextureBelt.width, CommonDataJT.TextureBelt.height);
+                    SceneManager.LoadScene("Marker");
                     
-                    CommonDataJT.prefabs.assetLookup[StringConstantsJT.Prefab_Sprite_1].GetComponent<SpriteRenderer>().sprite = Sprite.Create(CommonDataJT.TextureBelt, rec, new Vector2(0.5f, 0.5f), 100f);
-                    CommonDataJT.prefabs.assetLookup[StringConstantsJT.Prefab_Sprite_2].GetComponent<SpriteRenderer>().sprite = Sprite.Create(CommonDataJT.TextureBelt, rec, new Vector2(0.5f, 0.5f), 100f);
-                    CommonDataJT.prefabs.assetLookup[StringConstantsJT.Prefab_Sprite_1].AddComponent<BoxCollider2D>();
-                    CommonDataJT.prefabs.assetLookup[StringConstantsJT.Prefab_Sprite_2].AddComponent<BoxCollider2D>();
 
                    // CommonDataJT.prefabs.assetLookup[StringConstantsJT.Prefab_Sprite_1].GetComponent<BoxCollider2D>().offset = new Vector2(0,0);
                    // CommonDataJT.prefabs.assetLookup[StringConstantsJT.Prefab_Sprite_2].GetComponent<BoxCollider2D>().offset = new Vector2(0, 0);
                    // CommonDataJT.prefabs.assetLookup[StringConstantsJT.Prefab_Sprite_1].transform.localPosition = new Vector3(0, 0, 0);
                    // CommonDataJT.prefabs.assetLookup[StringConstantsJT.Prefab_Sprite_2].transform.localPosition = new Vector3(0, 0, 0);
-                    CommonDataJT.prefabs.assetLookup[StringConstantsJT.Prefab_Portal].GetComponent<TestRepeated>().enabled = true;
+                   // CommonDataJT.prefabs.assetLookup[StringConstantsJT.Prefab_Portal].GetComponent<TestRepeated>().enabled = true;
 
                 }
                 else
